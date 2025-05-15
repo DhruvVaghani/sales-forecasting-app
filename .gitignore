@@ -1,0 +1,5 @@
+__pycache__/
+Chinook.db mydatabase (1).db mydatabase(1).db mydatabase.db
+le_family.pkl xgboost_model.pkl
+test .ipynb
+venv/
