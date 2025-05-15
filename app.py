@@ -10,13 +10,14 @@ model = joblib.load("xgboost_model.pkl")
 from langchain_community.utilities import SQLDatabase
 from typing_extensions import TypedDict,Optional, Any
 import os
-from constant import openai_key
+import streamlit as st
 from langchain.chat_models import init_chat_model
 from langchain_community.tools.sql_database.tool import QuerySQLDatabaseTool
 from langchain.tools import Tool
 
+openai_key = st.secrets["API_KEY"]
+os.environ["OPENAI_API_KEY"] = openai_key
 
-os.environ["OPENAI_API_KEY"]= openai_key
 
 
 db = SQLDatabase.from_uri("sqlite:///mydatabase (1).db")
